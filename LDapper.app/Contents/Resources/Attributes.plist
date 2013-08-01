@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Binary</key>
+	<array>
+		<string>personalsignature</string>
+		<string>audio</string>
+		<string>objectguid</string>
+		<string>objectsid</string>
+		<string>msexchmailboxguid</string>
+		<string>msexchmailboxsecuritydescriptorx</string>
+		<string>schemaidguid</string>
+		<string>usercertificate</string>
+		<string>cacertificate</string>
+		<string>certificaterevocationlist</string>
+		<string>crosscertificatepair</string>
+		<string>deltarevocationlist</string>
+		<string>x500uniqueidentifier</string>
+		<string>supportedalgorithms</string>
+		<string>protocolinformation</string>
+		<string>javaserializeddata</string>
+		<string>javaserializedobject</string>
+	</array>
+	<key>Image</key>
+	<array>
+		<string>photo</string>
+		<string>jpegphoto</string>
+		<string>thumbnailphoto</string>
+		<string>thumbnaillogo</string>
+	</array>
+</dict>
+</plist>

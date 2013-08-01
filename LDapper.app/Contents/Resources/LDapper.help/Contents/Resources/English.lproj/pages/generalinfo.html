@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>LDapper - General Info</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="xrobots" content="noindex" />
+<script src="../jquery-1.8.3.min.js"></script>
+<script src="./showhide.js"></script>
+<link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+<body>
+
+<div id="content" class="content">
+
+<div class="top">
+   <img class="icon" src="../images/LDapper.png" alt>
+   <div class="name">
+      General Info
+   </div>
+   <div class="desc">
+      LDapper is an LDAP client for searching and browsing LDAP servers.
+   </div>
+</div><!-- /top -->
+
+<div class="section_header clickable" id="section_header_1">
+   <span class="name">About LDapper</span>
+   <span class="showhide" id="showhide_1">Show</span>
+</div><!-- /section_header -->
+
+<div class="section" id="section_1">
+<p>
+LDapper is an LDAP (Lightweight Directory Access Protocol) client for finding email addresses. You can look
+up people by name, department, or some other arbitrary attribute. Once you have a list of people, you can
+copy/paste or drag addresses into a new email message. You can probably automagically add them to a new email 
+message by choosing the &quot;Mail To&quot; menu. You can export addresses directly into your Mac's Contacts
+(aka Address Book) or files that can be imported into other applications. With LDapper, you can also browse
+an LDAP server in a hierarchical fashion.
+</p>
+<p>
+Unlike older versions of LDapper which used the LDAP framework (or OpenLDAP libraries) directly, this
+version is really a &quot;wrapper&quot; around the built-in LDAP utility ldapsearch that is included by default
+with Mac OS X. You can think of LDapper as a GUI &quot;front-end&quot; to ldapsearch. Many of the options and
+preferences you specify simply modify the command line arguments to the ldapsearch command. This version of
+LDapper uses separate preferences than previous versions so you can continue to use an older version if you
+wish. The first time you run this version, LDapper will import any directories from the old version. Any
+subsequent changes to those directories will only affect the new version. LDapper now requires Mac OS X 10.7
+(Lion) or later.
+</p>
+<p>
+The latest version of LDapper can be found 
+<a href="http://carl-bell.baylor.edu/carl_bell/stuff.html">here</a>. (http://carl-bell.baylor.edu/carl_bell/stuff.html)
+</p>
+</div><!-- /section -->
+
+<div class="section_header" id="section_header_2">
+<span class="name">Credits</span>
+<span class="showhide" id="showhide_2">Show</span>
+</div><!-- /section_header -->
+
+<div class="section" id="section_2">
+<p>
+<strong>LDapper 3.1</strong> - by Carl W. Bell<br>
+Copyright &copy; 1997-2013 Baylor University.
+</p>
+<p>
+<strong>Baylor's Boilerplate Fine Print</strong>
+</p>
+<p>
+This software, data and/or documentation contain trade secrets and confidential
+information which are proprietary to Baylor University. Their use or disclosure
+in whole or in part without the express written permission of Baylor University
+is prohibited.
+</p>
+<p>
+This software, data and/or documentation are also unpublished works protected
+under the copyright laws of the United States of America. If these works become
+published, the following notice shall apply:
+</p>
+<p>
+Copyright &copy; 1997-2013 Baylor University<br>
+All Rights Reserved
+</p>
+<p>
+The name of Baylor University may not be used to endorse or promote products
+derived from this software without specific prior written permission. THIS
+SOFTWARE, DATA AND/OR DOCUMENTATION ARE PROVIDED &quot;AS IS&quot; AND WITHOUT
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+</p>
+<p>
+When permission has been granted to make copies of this software, data and/or
+documentation, the above notices must be retained on all copies.
+</>
+<p>
+<p>
+<i>Permission is hereby granted for non-commercial use and distribution of LDapper</i>
+</p>
+</div><!-- /section -->
+
+<div class="section_header" id="section_header_3">
+<span class="name">Release Notes</span>
+<span class="showhide" id="showhide_3">Show</span>
+</div><!-- /section_header -->
+
+<div class="section" id="section_3">
+<p>
+3.1.1 (02-Apr-2013)
+</p>
+<ul class="releasenotes">
+<li>Saving current search updates the saved searches window.
+<li>Saving current search now uses the name &quot;New Search&quot; instead of the name of the previous search.
+<li>Focus ring around search criteria in a Search window is no longer visible when running on 10.7.
+<li>Tweaked initial position/size of windows a bit.
+</ul>
+<p>
+3.1 (12-Feb-2013) 
+</p>
+<ul class="releasenotes">
+<li>Now requires Lion (10.7) or later.</li>
+<li>Now signed with DeveloperID so should launch with strict(er) Gatekeeper settings.</li>
+<li>Changed how user specifies search criteria. Can now add up to 4 criteria by clicking (+) and (-) buttons.</li>
+<li>Can now save searches. Works somewhat like a web browser's &quot;bookmarks&quot;.</li>
+<li>No longer supports a directory's &quot;Other&quot; attribute. Instead, user specifies the attribute
+when choosing &quot;Other...&quot; popup menu item in the Search window.</li>
+<li>Description attribute(s) added to note when exporting to Contacts.</li>
+<li>Will use displayname attribute for first name if givenname doesn't exist when exporting to Contacts.</li>
+<li>Added printing support.</li>
+<li>Renamed cold prickly &quot;Info Text&quot; references to warm fuzzy &quot;Details&quot;.</li>
+<li>Although the Details and Command Output text fields are not editable, you can still Cut and Clear
+any selected text (and/or images).</li>
+<li>Can now export details for all entries as well as selected entries.</li>
+<li>LDapper documents are no longer supported.</li>
+<li>Help menu now uses standard Mac Help Center.</li>
+<li>Tweaked the default (and minimum) window size a bit.</li>
+</ul>
+<p>
+3.0 (22-Jun-2012)
+</p>
+<ul class="releasenotes">
+<li>Initial non-beta release of &quot;3.0&quot; version.
+</ul>
+<p>
+3.0b1 (26-Apr-2012)
+</p>
+<ul class="releasenotes">
+<li>Initial beta release of &quot;3.0&quot; version.
+</ul>
+
+</div><!-- /section -->
+
+<div class="section_header">
+</div>
+
+</div><!-- content -->
+
+</body>
+</html>

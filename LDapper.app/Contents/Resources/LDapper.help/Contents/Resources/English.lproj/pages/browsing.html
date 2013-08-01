@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>LDapper - Browsing</title>
+<meta http-equiv="Content-Type" content="text/html; charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="xrobots" content="noindex" />
+<script src="../jquery-1.8.3.min.js"></script>
+<script src="./showhide.js"></script>
+<link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+<body>
+
+<div id="content" class="content">
+
+<div class="top">
+   <img class="icon" src="../images/LDapper.png" alt>
+   <div class="name">
+      Browsing
+   </div>
+   <div class="desc">
+      Select the &quot;New Browse Window&quot; command in the File menu to open a new browse window with default settings.
+   </div>
+</div><!-- /top -->
+
+<div class="section_header clickable" id="section_header_1">
+   <span class="name">Basic Info</span>
+   <span class="showhide" id="showhide_1">Show</span>
+</div><!-- /section_header -->
+
+<div class="section" id="section_1">
+<p>
+It is possible to &quot;browse&quot; an LDAP directory hierarchically, starting with the
+directory's &quot;Search Base&quot;.  Click the small triangle to the left of an entry to
+expand it. This will display all of the entries one &quot;level&quot; down. Click the
+small triangle again to collapse the list. Selecting an entry will display its attributes
+and values in the text field below the list. LDapper only fetches an entry's details from
+the server when you select it.  Unlike a search window, you cannot copy/paste, drag and
+drop, export, or &quot;mailto:&quot; selected entries.
+</p>		
+<p>
+Browsing appends each command's output to the Command Output text rather than
+replacing it. As with Search windows, you can export the Details and Command Output
+text.
+</p>
+<p>
+If you find yourself using LDapper to browse more often than search, you can
+use Preferences to switch the default document type to browse. Normally,
+LDapper uses Cmd-N to create a new search window and Shift-Cmd-N to create a
+new browse window. Switching the default document to browse swaps these. The
+default document type is also the type of window that is created when LDapper
+is first launched or when you switch to LDapper by clicking its icon in the
+dock (if there are no other documents open).
+</p>
+</div><!-- /section -->
+
+<div class="section_header" id="section_header_2">
+<span class="name">Set browse options</span>
+<span class="showhide" id="showhide_2">Show</span>
+</div><!-- /section_header -->
+
+<div class="section" id="section_2">
+<p>
+You can modify several options to use when browsing. Many of these are the same
+as those for searching, and like setting Search options, to set these options just
+for the current Browse window, select &quot;Browse Options&quot; from the LDAP
+menu. To set the options as defaults for all Browse windows, modify them in
+&quot;Preferences&quot;.
+</p>
+<ul class="indent">
+<li><i>Fetch attributes</i> - which attributes should be fetched from the server?
+The choices are All, Operational, All + Operational.
+</li>
+<li><i>Time limit</i> - wait at most this long for a search to complete. Set this to 0 to
+wait forever. The default is 60 seconds.
+</li>
+<li><i>Connect timeout</i> - wait at most this long for the initial network connection
+to the LDAP server to complete. This is a separate timeout value than &quot;Time
+limit&quot; above. Note that if you have specified Request/Require StartTLS, this
+option may not be used so if LDapper is unable to connect, you will probably end up
+waiting until the connection is timed out by the operating system, usually 75
+seconds. I don't know if this is by design or a bug in ldapsearch.
+</li>
+<li><i>Decode Base64</i> - should values that include Base64 encoded data, e.g., photos
+or text data with special characters, be decoded when adding to the Address List?
+Note that even if this is enabled, the Base64 encoded value will still appear in
+the Command Output text because it is meant to display the ldapsearch output verbatim.
+</li>
+<li><i>Discard output</i> - should output from the ldapsearch command be discarded
+instead of added to the Command Output text?
+</li>
+<li><i>Debug level</i> - enables and specifies the debug level for the ldapsearch command.
+Note that the extra info returned by ldapsearch may make it impossible for LDapper to
+parse the results correctly. You can see the debug/trace results in the &quot;Command
+Output&quot; text.
+</li>
+</ul>
+<p>
+Note that the &quot;Max # Hits&quot;, &quot;Discard responses without email&quot;, &quot;Search
+for people only&quot;, and &quot;Show friendly attributes&quot; options are disabled or
+ignored for Browse windows.
+</p>
+</div><!-- /section -->
+
+<div class="section_header">
+</div>
+
+</div><!-- content -->
+
+</body>
+</html>

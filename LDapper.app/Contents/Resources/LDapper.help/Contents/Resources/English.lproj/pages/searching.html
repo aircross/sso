@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>LDapper - Searching</title>
+<meta http-equiv="Content-Type" content="text/html; charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="robots" content="noindex" />
+<script src="../jquery-1.8.3.min.js"></script>
+<script src="./showhide.js"></script>
+<link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+<body>
+
+<div id="content" class="content">
+
+<div class="top">
+   <img class="icon" src="../images/LDapper.png" alt>
+   <div class="name">
+      Searching
+   </div>
+   <div class="desc">
+      Select the &quot;New Search Window&quot; command in the File menu to open a new search window with default settings.
+   </div>
+</div><!-- /top -->
+
+<div class="section_header clickable" id="section_header_1">
+   <span class="name">Basic Info</span>
+   <span class="showhide" id="showhide_1">Show</span>
+</div><!-- /section_header -->
+
+<div class="section" id="section_1">
+<p>
+You can change several of the settings, e.g., the directory and search criteria,
+before doing a search. You can have up to 4 criteria for searching. Click the (+)
+and (-) buttons to add and remove criteria. When searching, LDapper will find
+entries that match ALL criteria, i.e., AND not OR. Use the popup menu(s) to choose
+which attribute(s) you want to search for, the search type (is, is similarto, contains,
+starts with, ends with, is anything, is missing), enter some text in the search field(s),
+and then click the Search button or select the Search command in the LDAP menu.
+</p>
+<p>
+If required, you will be prompted for a password. If your password is stored
+in your keychain but you don't want to use it for some reason, or if you need to
+specify/change your identification, press the Option key while starting a search
+and you will always be prompted.
+</p>
+<p>
+LDapper will build the ldapsearch command using the options you specify and then
+run ldapsearch. It will parse any output from the ldapsearch command and add the
+entries returned to the &quot;Address List&quot;. If you just want to see the
+ldapsearch command and not actually run it, hold down the Control key when
+starting a search.
+</p>
+<p>
+If you select a person in the Address List, their info will appear in the
+&quot;Details&quot; text at the bottom of the window. LDapper can save the actual
+output from the ldapsearch command. You can switch between the Details and the
+Command Output text by clicking on the Details/Output buttons. LDapper adds the
+ldapsearch command and its arguments at the top of the Command Output text.
+You <i>should</i> be able to copy the command and paste it in Terminal to run
+the ldapsearch command directly. If you just want to get the command but not
+actually perform a search, press the Shift key while starting a search. Also,
+any error text, i.e., stderr, will appear below the output. You can export the
+Details (or Command Output) text to a file.
+</p>
+<p>
+You can export the Details for selected or all addresses to a file.  You can
+save the text as plain text (.txt) or rich text format (.rtf) to get bold
+attributes. If any of the details contains photos, you can save as rich text
+format with attachments (.rtfd) to include the photos in the file. Note that
+photos in the info are resized so that the maximum height or width is 256 pixels
+so it may be smaller that the actual image in the directory. (You can also drag
+images from the Info text and LDapper will create jpeg files.) Command Output text
+is always exported as plain text.
+</p>
+</div><!-- /section -->
+
+<div class="section_header" id="section_header_2">
+<span class="name">Set search options</span>
+<span class="showhide" id="showhide_2">Show</span>
+</div><!-- /section_header -->
+
+<div class="section" id="section_2">
+<p>
+You can modify several options to use when performing a search. To set these options
+just for the current Search window, select &quot;Search Options&quot; from the LDAP
+menu. To set the options as defaults for all Search windows, modify them in
+&quot;Preferences&quot;.
+</p>
+<ul class="indent">
+<li><i>Fetch attributes</i> - which attributes should be fetched from the server?
+The choices are Minimal, All, Operational, All + Operational, and None. The default
+is to fetch All attributes. &quot;Minimal&quot; will fetch only the last name (sn),
+full name (cn), department (ou), email (mail), and the &quot;other&quot; (if any)
+attributes for the directory. &quot;Operational&quot; returns attributes used by
+servers for administering the directory system itself. &quot;None&quot; will
+return just the &quot;distinguished names&quot; (dn) of any matching entries.
+</li>
+<li><i>Max # hits</i> - the maximum number of responses you want to receive from the
+LDAP server. Set this to 0 to indicate no limit. The default is 100. Note that
+there may be a limit set by the server. One interesting thing related to this
+value is that if your search uses too many resources on the server, e.g., searching
+on a non-indexed attribute, LDapper may receive a &quot;max hits exceeded&quot;
+error from the server even though there really weren't that many matches. This
+probably won't happen on normal searches.
+</li>
+<li><i>Time limit</i> - wait at most this long for a search to complete. Set this to 0 to
+wait forever. The default is 60 seconds.
+</li>
+<li><i>Connect timeout</i> - wait at most this long for the initial network connection
+to the LDAP server to complete. This is a separate timeout value than &quot;Time
+limit&quot; above. Note that if you have specified Request/Require StartTLS, this
+option may not be used so if LDapper is unable to connect, you will probably end up
+waiting until the connection is timed out by the operating system, usually 75
+seconds. I don't know if this is by design or a bug in ldapsearch.
+</li>
+<li><i>Discard responses without email</i> - should responses that are missing email
+addresses be ignored? If this is not enabled, entires in the list without email
+addresses will show &quot;n/a&quot; instead. You will not be able to include any
+of these (non-)addresses when preforming a &quot;mailto&quot; and they may be
+skipped when exporting as well. This option is ignored if you are fetching
+&quot;Operational&quot; or &quot;None&quot; attributes.
+</li>			
+<li><i>Search for people only</i> - should LDapper limit a search to only people, i.e.,
+those entries with an objectclass value of &quot;person&quot;? (This value can be
+modified when editing a directory.)
+</li>
+<li><i>Show friendly attributes</i> - specifies how attributes should be displayed in the
+&quot;Info&quot; field. If enabled, a more descriptive attribute is uses, e.g.,
+&quot;Last Name&quot; instead of &quot;sn&quot;. If disabled, the actual attribute
+is displayed.
+</li>
+<li><i>Decode Base64</i> - should values that include Base64 encoded data, e.g., photos
+or text data with special characters, be decoded when adding to the Address List?
+Note that even if this is enabled, the Base64 encoded value will still appear in
+the Command Output text because it is meant to display the ldapsearch output verbatim.
+</li>
+<li><i>Discard output</i> - should output from the ldapsearch command be discarded
+instead of added to the Command Output text?
+</li>
+<li><i>Debug level</i> - enables and specifies the debug level for the ldapsearch command.
+Note that the extra info returned by ldapsearch may make it impossible for LDapper to
+parse the results correctly. You can see the debug/trace results in the &quot;Command
+Output&quot; text.
+</li>
+</ul>
+
+</div><!-- /section -->
+
+<div class="section_header" id="section_header_3">
+<span class="name">Save searches</span>
+<span class="showhide" id="showhide_3">Show</span>
+</div><!-- /section_header -->
+
+<div class="section" id="section_3">
+<p>
+LDapper will remember the last search and use its criteria when you open a new search window.
+</p>
+<p>
+LDapper also allows you to save searches, similar to a web browser's bookmarks. To view
+them, select the &quot;Saved Searches&quot; window menu.  You can add, modify, and delete
+searches from this window.  To add the criteria in an active Search window, select the
+&quot;Save Current Search&quot; command in the LDAP&rarr;Saved Searches menu.  You can reorder
+the saved searches dragging them.
+<p>
+Each saved search has a name which appears in the Saved Searches menu. Selecting one of those
+menus will apply that search's criteria to the Search window. You can also drag a saved search
+to a Search window to use it (or click the &quot;Use Selected Search&quot; button.)
+</p>
+</div><!-- /section -->
+
+<div class="section_header" id="section_header_4">
+<span class="name">Work with email addresses</span>
+<span class="showhide" id="showhide_4">Show</span>
+</div><!-- /section_header -->
+
+<div class="section" id="section_4">
+<p>
+After a successful search, matching entries should appear the the &quot;Address List&quot;
+</p>
+<p class="indent">
+<strong>Copying/Dragging Addresses</strong>
+</p>
+<p class="indent">
+Click one or more entries in the address list to select them. You can then
+copy/paste or drag them to your email application or to a text clipping in the
+Finder. Entries without email addresses will not be included. Different email
+applications handle copying (and dragging) of addresses differently. You will
+need to experiment with some settings to see what works best with your email
+application. You can specify in Preferences which delimiter you want to use to
+separate the entries. These include commas, new lines, tabs, semicolons, and
+spaces. If you have an application that uses some other delimiter, please let
+me know, and I'll add it to the list. If the &quot;Include personal names&quot;
+preference is enabled, you'll get &quot;name &lt;email&gt;,name &lt;email&gt;&quot;.
+If disabled, you'll get &quot;email,email&quot;. There is also a setting in
+Preferences to change the format from &quot;name &lt;email&gt;&quot; to &quot;email
+(name)&quot;.
+</p>
+<p class="indent">
+<strong>&quot;Mail To:&quot;</strong>
+</p>
+<p class="indent">
+LDapper can automagically create a new email message pre-addressed with selected
+addresses if your email application supports this. (Most email apps do.) This works
+the same way as if you had clicked on a &quot;mailto:&quot; URL in a web page so
+any program that can be set up as a mailto URL helper should work. LDapper will
+use your default email application. Select one or more entries in the address
+list, then select the &quot;Mail To:&quot; menu to send the address(es) to your
+email application. Double-clicking an address will do the same thing.
+</p>
+<p class="indent">
+Note that sending addresses to your email application in this manner will not
+include personal names. If you want personal names, you must use copy/paste or
+drag and drop instead.
+</p>
+<p class="indent">
+<strong>Exporting Addresses</strong>
+</p>
+<p class="indent">
+You can export selected addresses by choosing an item in the &quot;Export Addresses&quot;
+menu. If no addresses are selected, you will export all addresses. The current export formats are:
+</p>
+<ul>
+<li><i>Address Book</i><br>
+<br>
+This does not actually save to a file, but instead adds the addresses to the
+OS X Contacts (Address Book). A group named &quot;From LDapper&quot; will be created and
+the addresses will be added to that group.
+<li><i>Address (Name)</i><br>
+<br>
+address (name)<br>
+address (name)<br>
+address<br>
+address (name)<br>
+etc.</br>
+</li>
+<li><i>Name &lt;Address></i><br>
+<br>
+name &lt;address><br>
+address<br>
+name &lt;address><br>
+name &lt;address><br>
+etc.<br>
+</li>
+<li><i>Pseudo LDIF</i><br>
+<br>
+dn: the dn<br>
+attr: value<br>
+attr: value<br>
+attr: value<br>
+attr: value<br>
+<br>
+dn: the dn<br>
+attr: value<br>
+attr: value<br>
+attr: value<br>
+attr: value<br>
+<br>
+etc.<br>
+<br>
+This is not a true LDIF file. Long lines are not folded, and images and binary
+values are replaced with the strings &quot;&lt;image data&gt;&quot; and
+&quot;&lt;binary data&gt;&quot;. If you really need the original LDIF data,
+you can get it from the Command Output text or just run the ldapsearch command
+in Terminal.
+</li>
+</ul>
+
+</div><!-- /section -->
+
+<div class="section_header">
+</div>
+
+</div><!-- content -->
+
+</body>
+</html>

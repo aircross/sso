@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>LDapper Help</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="robots" content="noindex" />
+<script src="./jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./pages/style.css" />
+</head>
+<body>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+//   alert($(location).attr('href'));
+
+   // This could be dynamic and cool.  For now, though, it's hardcoded and lame.
+
+   $('#chapter_1').addClass("viewing");
+   $('#sections_1').addClass("viewing");
+
+   $("[id^=chapter]").click(function() {
+
+      // Remove viewing class from all "chapter"s
+
+      $("[id^=chapter]").removeClass("viewing");
+
+      // Add viewing class to this "chapter"
+
+      $(this).addClass("viewing");
+
+      // Remove viewing class from all "sections"
+
+      $("[id^=sections]").removeClass("viewing");
+
+      // Add viewing class to the selected "section"
+
+      // alert($(this).attr("id"));
+
+      if ($(this).attr("id") == "chapter_1") $('#sections_1').addClass("viewing");
+      if ($(this).attr("id") == "chapter_2") $('#sections_2').addClass("viewing");
+      if ($(this).attr("id") == "chapter_3") $('#sections_3').addClass("viewing");
+      if ($(this).attr("id") == "chapter_4") $('#sections_4').addClass("viewing");
+      if ($(this).attr("id") == "chapter_5") $('#sections_5').addClass("viewing");
+   });
+
+});
+
+</script>
+
+<div id="toc" class="toc">
+
+<div class="top">
+   <img class="icon" src="./images/LDapper.png" alt>
+   <div class="name">
+      LDapper Help
+   </div>
+   <div class="desc">
+      LDapper is an LDAP (Lightweight Directory Access Protocol) client for searching and browsing LDAP servers.
+   </div>
+   <noscript>
+      <div class="nojs">
+         To view help, you must turn on JavaScript. For more information,
+         see <a href="http://help.apple.com/resources/javascript/?lang=en">this Apple support article</a>.
+      </div>
+   </noscript>
+</div><!-- /top -->
+
+
+<ul class="chapters">
+<li class="chapter" id="chapter_1"><a href="#chapter_1">General Info</a></li>
+<li class="chapter" id="chapter_2"><a href="#chapter_2">Directories</a></li>
+<li class="chapter" id="chapter_3"><a href="#chapter_3">Searching</a></li>
+<li class="chapter" id="chapter_4"><a href="#chapter_4">Browsing</a></li>
+<li class="chapter" id="chapter_5"><a href="#chapter_5">ldapsearch</a></li>
+</ul>
+
+<div class="sections" id="sections_1">
+<a name="chapter_1" />
+<ul class="sections">
+<li class="section"><a href="./pages/generalinfo.html?1">About LDapper</a></li>
+<li class="section"><a href="./pages/generalinfo.html?2">Credits</a></li>
+<li class="section"><a href="./pages/generalinfo.html?3">Release Notes</a></li>
+</ul>
+</div><!-- /sections -->
+
+<div class="sections" id="sections_2">
+<a name="chapter_2" />
+<ul class="sections">
+<li class="section"><a href="./pages/directories.html?1">Set up a directory</a></li>
+<li class="section"><a href="./pages/directories.html?2">Set LDAP server options</a></li>
+<li class="section"><a href="./pages/directories.html?3">Modify default attributes</a></li>
+<li class="section"><a href="./pages/directories.html?4">Specify authentication details</a></li>
+</ul>
+</div><!-- /sections -->
+
+<div class="sections" id="sections_3">
+<a name="chapter_3" />
+<ul class="sections">
+<li class="section"><a href="./pages/searching.html?1">Basic Info</a></li>
+<li class="section"><a href="./pages/searching.html?2">Set search options</a></li>
+<li class="section"><a href="./pages/searching.html?3">Save searches</a></li>
+<li class="section"><a href="./pages/searching.html?4">Work with email addresses</a></li>
+</ul>
+</div><!-- /sections -->
+
+<div class="sections" id="sections_4">
+<a name="chapter_4" />
+<ul class="sections">
+<li class="section"><a href="./pages/browsing.html?1">Basic Info</a></li>
+<li class="section"><a href="./pages/browsing.html?2">Set browse options</a></li>
+</ul>
+</div><!-- /sections -->
+
+<div class="sections" id="sections_5">
+<a name="chapter_5" />
+<ul class="sections">
+<li class="section"><a href="./pages/ldapsearch.html?1">OpenLDAP</a><li>
+<li class="section"><a href="./pages/ldapsearch.html?2">ldapsearch man page</a></li>
+<li class="section"><a href="./pages/ldapsearch.html?3">ldapsearch usage</a></li>
+</ul>
+</div><!-- /sections -->
+
+</div><!-- /toc -->
+
+</body>
+</html>

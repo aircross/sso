@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>dn</key>
+	<string>Distinguished Name</string>
+	<key>sn</key>
+	<string>Last Name</string>
+	<key>cn</key>
+	<string>Full Name</string>
+	<key>ou</key>
+	<string>Department</string>
+	<key>mail</key>
+	<string>Email</string>
+	<key>affiliationcode</key>
+	<string>Affiliation Code</string>
+	<key>businesscategory</key>
+	<string>Business Category</string>
+	<key>c</key>
+	<string>Country</string>
+	<key>classification</key>
+	<string>Classification</string>
+	<key>classstanding</key>
+	<string>Class Standing</string>
+	<key>departmentname</key>
+	<string>Department Name</string>
+	<key>departmentnumber</key>
+	<string>Department Number</string>
+	<key>description</key>
+	<string>Description</string>
+	<key>destinationindicator</key>
+	<string>Destination Indicator</string>
+	<key>drink</key>
+	<string>Favorite Drink</string>
+	<key>employeenumber</key>
+	<string>Employee Number</string>
+	<key>employeetype</key>
+	<string>Employee Type</string>
+	<key>facsimiletelephonenumber</key>
+	<string>Fax</string>
+	<key>givenname</key>
+	<string>Given Name</string>
+	<key>homephone</key>
+	<string>Home Phone</string>
+	<key>homepostaladdress</key>
+	<string>Home Address</string>
+	<key>initials</key>
+	<string>Initials</string>
+	<key>internationalisdnnumber</key>
+	<string>ISDN Phone Number</string>
+	<key>jpegphoto</key>
+	<string>JPEG Photo</string>
+	<key>jobtitle</key>
+	<string>Job Title</string>
+	<key>krbname</key>
+	<string>Kerberos Name</string>
+	<key>l</key>
+	<string>Locale</string>
+	<key>labeleduri</key>
+	<string>Labeled URI</string>
+	<key>labeledurl</key>
+	<string>Labeled URL</string>
+	<key>mailpreferenceoption</key>
+	<string>Mail Preference Option</string>
+	<key>manager</key>
+	<string>Manager</string>
+	<key>memberofgroup</key>
+	<string>Member of Group</string>
+	<key>mobile</key>
+	<string>Cellphone Number</string>
+	<key>multilinedescription</key>
+	<string>Multilined Description</string>
+	<key>nameprefix</key>
+	<string>Name Prefix</string>
+	<key>namesuffix</key>
+	<string>Name Suffix</string>
+	<key>notice</key>
+	<string>Notice</string>
+	<key>o</key>
+	<string>Organization</string>
+	<key>objectclass</key>
+	<string>ObjectClass</string>
+	<key>onvacation</key>
+	<string>On Vacation</string>
+	<key>organizationalstatus</key>
+	<string>Organizational Status</string>
+	<key>othermailbox</key>
+	<string>Other Mailbox</string>
+	<key>pager</key>
+	<string>Pager Number</string>
+	<key>personaltitle</key>
+	<string>Personal Title</string>
+	<key>physicaldeliveryofficename</key>
+	<string>Physical Delivery Office Name</string>
+	<key>photo</key>
+	<string>Photo</string>
+	<key>pid</key>
+	<string>Person ID</string>
+	<key>postaladdress</key>
+	<string>Postal Address</string>
+	<key>postalcode</key>
+	<string>Postal Code</string>
+	<key>postofficebox</key>
+	<string>P.O. Box</string>
+	<key>preferreddeliverymethod</key>
+	<string>Preferred Delivery Method</string>
+	<key>registeredaddress</key>
+	<string>Registered Address</string>
+	<key>roomnumber</key>
+	<string>Room Number</string>
+	<key>secretary</key>
+	<string>Secretary</string>
+	<key>seealso</key>
+	<string>See Also</string>
+	<key>st</key>
+	<string>State</string>
+	<key>street</key>
+	<string>Street</string>
+	<key>streetaddress</key>
+	<string>Street Address</string>
+	<key>telephonenumber</key>
+	<string>Phone</string>
+	<key>title</key>
+	<string>Title</string>
+	<key>uid</key>
+	<string>Login Name</string>
+	<key>universityid</key>
+	<string>University ID</string>
+	<key>userclass</key>
+	<string>User Class</string>
+	<key>userpassword</key>
+	<string>User Password</string>
+	<key>vacationmethod</key>
+	<string>Vacation Method</string>
+</dict>
+</plist>
